@@ -139,7 +139,14 @@ with tab1:
             try:
                 rates = fetch_both_rates(sel_year, sel_month)
                 st.session_state.rates = rates
-                st.success("Rates fetched successfully.")
+                # Push values directly into widget state so number_inputs refresh
+                st.session_state["current_rate"] = rates["current_rate"]
+                st.session_state["prior_rate"]   = rates["prior_rate"]
+                st.success(
+                    f"✅  Rates fetched  —  "
+                    f"Current ({rates['current_actual_date']}): **{rates['current_rate']:.6f}**  |  "
+                    f"Prior ({rates['prior_actual_date']}): **{rates['prior_rate']:.6f}**"
+                )
             except Exception as e:
                 st.error(f"Could not fetch rates: {e}")
                 st.info("Enter rates manually below.")

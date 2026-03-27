@@ -106,12 +106,19 @@ with tab1:
         "You may override any rate before proceeding."
     )
 
+    # Default to the prior closed month (accountants always close the previous month)
+    _today = datetime.today()
+    _default_month = _today.month - 1 if _today.month > 1 else 12
+    _default_year  = _today.year if _today.month > 1 else _today.year - 1
+    _year_list     = list(range(_today.year, 2018, -1))
+    _year_index    = _year_list.index(_default_year) if _default_year in _year_list else 0
+
     c1, c2, c3 = st.columns([2, 2, 3])
     with c1:
-        sel_year  = st.selectbox("Year",  range(datetime.today().year, 2018, -1),
-                                 index=0, key="sel_year")
+        sel_year  = st.selectbox("Year",  _year_list,
+                                 index=_year_index, key="sel_year")
     with c2:
-        sel_month = st.selectbox("Month", range(1, 13), index=datetime.today().month - 1,
+        sel_month = st.selectbox("Month", range(1, 13), index=_default_month - 1,
                                  format_func=lambda m: month_name[m], key="sel_month")
     with c3:
         entity_name = st.text_input("Entity / Subsidiary Name (for workpaper header)",

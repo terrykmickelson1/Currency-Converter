@@ -50,13 +50,13 @@ Operations: Freight and Courier Costs,Expense,Postage Expense,Expense,5000,IS
 Operations: Insurance,Expense,Insurance,Expense,6500,IS
 Operations: Licensing and Registrations,Expense,Business Licenses,Expense,6620,IS
 Operations: Payment Processor/Merchant Fees,Expense,Processing Fees,Expense,6480,IS
+"Operations: Postage, Printing and Stationery",Expense,Postage Expense,Expense,6420,IS
 Operations: Postage Printing and Stationery,Expense,Postage Expense,Expense,6420,IS
-Operations: Postage, Printing and Stationery,Expense,Postage Expense,Expense,6420,IS
 Operations: Professional Fees,Expense,Professional Fees,Expense,6810,IS
 Operations: Rent,Expense,Rent Expense,Expense,6810,IS
 Operations: Software/Subscriptions,Expense,Software & Subscriptions,Expense,6250,IS
 Operations: Telephone/Internet,Expense,Telephone Expense,Expense,6410,IS
 Travel and Meeting: Travel Expenses,Expense,Travel Expense,Expense,6130,IS
+"Travel and Meetings: Conferences, Conventions and Meetings",Expense,Conferences & Meetings,Expense,6470,IS
 Travel and Meetings: Conferences Conventions and Meetings,Expense,Conferences & Meetings,Expense,6470,IS
-Travel and Meetings: Conferences, Conventions and Meetings,Expense,Conferences & Meetings,Expense,6470,IS
 Travel and Meetings: Parking and Tolls,Expense,Travel Expense,Expense,6620,IS

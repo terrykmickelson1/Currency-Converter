@@ -1,0 +1,62 @@
+xero_account,xero_type,qb_account,qb_type,qb_number,je_section
+Checking,Asset,AUS Checking,Current Asset,1020,BS
+Savings,Asset,AUS Savings,Current Asset,1021,BS
+Trade Debtors,Asset,Accounts Receivable,Current Asset,1022,BS
+Other Debtors,Asset,AUS Payables,Other Current Liabilities,1130,BS
+Accounts Receivable,Asset,Accounts Receivable,Current Asset,1022,BS
+Other Current Assets,Asset,Other Current Assets,Current Asset,1023,BS
+Payables,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Credit Card Liability,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Due to Parent,Liabilities,Due from Subsidiary,Other Current Liabilities,2330,BS
+Employee Provisions,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+GST,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Income Received in Advance,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Income Received in Advance - Cotton Ball,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Pass Through Donation Accruals,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+PAYG Withholdings Payable,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Salary Sacrifice Clearing Account,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Sundry Creditors,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Superannuation Payable,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Trade Creditors,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Wages Payable - Payroll,Liabilities,AUS Payables,Other Current Liabilities,2310,BS
+Current Year Earnings,Equity,Equity in Subsidiary,Equity,3300,IS
+Retained Earnings,Equity,Equity in Subsidiary,Equity,3300,IS
+Event Revenue: Auction Items,Income,Auction Revenue,Income,4200,IS
+Contributions: Individual Contributions,Income,General Donations,Income,4605,IS
+Donations Received >$10k,Income,Major Donors,Income,4600,IS
+Event Revenue: Sponsorships,Income,Sponsorship Revenue,Income,4600,IS
+Event Revenue: Ticket Sales,Income,Ticket Sales,Income,4600,IS
+Grants: Non Restricted,Income,Grant Revenue,Income,4510,IS
+Interest Income,Income,Interest,Income,6210,IS
+Other Revenue,Income,General Donations,Income,4605,IS
+Employee Costs: Staff Training and Clearances,Expense,Professional Development,Expense,6320,IS
+Employees Entitlement Movement,Expense,Benefits,Expense,6220,IS
+Event Revenue: Event Expenses,Expense,Event Expenses: Other,Expense,6491,IS
+Event Revenue: Venue Hire,Expense,Event Expenses: Rental,Expense,6430,IS
+Facilities/Equipment: Storage Fees,Expense,Rent Expense,Expense,6090,IS
+Grants/Research: Donations Paid,Expense,Research Grants,Expense,6010,IS
+Grants/Research: Donations Paid - Pass Through Donations,Expense,Research Grants,Expense,6010,IS
+Grants/Research: Pass Through Donations,Expense,Research Grants,Expense,6010,IS
+Marketing/Advertising: Advertising and Marketing,Expense,Advertising & Marketing,Expense,6130,IS
+Marketing/Advertising: Merchandise Purchases,Expense,Supplies,Expense,5003,IS
+Merchandise Purchases,Expense,Supplies,Expense,5003,IS
+Merchant Fees - Stripe,Expense,Processing Fees,Expense,5003,IS
+Operations: Accounting and Bookkeeping Fees,Expense,Accounting Expense,Expense,5006,IS
+Operations: Audit Fees,Expense,Audit Fees,Expense,6480,IS
+Operations: Bank Fees,Expense,Bank Fees,Expense,6499,IS
+Operations: Computer and IT Expenses,Expense,Computer Expense,Expense,6440,IS
+Operations: Entertainment,Expense,Supplies,Expense,6610,IS
+Operations: Freight and Courier Costs,Expense,Postage Expense,Expense,5000,IS
+Operations: Insurance,Expense,Insurance,Expense,6500,IS
+Operations: Licensing and Registrations,Expense,Business Licenses,Expense,6620,IS
+Operations: Payment Processor/Merchant Fees,Expense,Processing Fees,Expense,6480,IS
+Operations: Postage Printing and Stationery,Expense,Postage Expense,Expense,6420,IS
+Operations: Postage, Printing and Stationery,Expense,Postage Expense,Expense,6420,IS
+Operations: Professional Fees,Expense,Professional Fees,Expense,6810,IS
+Operations: Rent,Expense,Rent Expense,Expense,6810,IS
+Operations: Software/Subscriptions,Expense,Software & Subscriptions,Expense,6250,IS
+Operations: Telephone/Internet,Expense,Telephone Expense,Expense,6410,IS
+Travel and Meeting: Travel Expenses,Expense,Travel Expense,Expense,6130,IS
+Travel and Meetings: Conferences Conventions and Meetings,Expense,Conferences & Meetings,Expense,6470,IS
+Travel and Meetings: Conferences, Conventions and Meetings,Expense,Conferences & Meetings,Expense,6470,IS
+Travel and Meetings: Parking and Tolls,Expense,Travel Expense,Expense,6620,IS

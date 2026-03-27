@@ -31,6 +31,33 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+# ---------------------------------------------------------------------------
+# Password gate
+# Set your password via Streamlit Cloud → App Settings → Secrets:
+#   APP_PASSWORD = "your_chosen_password"
+# Falls back to "changeme123" if no secret is set.
+# ---------------------------------------------------------------------------
+def _check_password() -> bool:
+    if st.session_state.get("authenticated"):
+        return True
+    try:
+        stored = st.secrets["APP_PASSWORD"]
+    except Exception:
+        stored = "changeme123"
+    st.markdown("## 🔐  AUS → USD FX Conversion Tool")
+    st.markdown("Please enter the access password to continue.")
+    pwd = st.text_input("Password", type="password", key="pwd_input")
+    if st.button("Login", type="primary"):
+        if pwd == stored:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password. Please try again.")
+    return False
+
+if not _check_password():
+    st.stop()
+
 st.title("🇦🇺 → 🇺🇸  Australia Subsidiary FX Conversion Tool")
 st.caption(
     "Converts Xero (AUD) financials to USD using ASC 830 | "

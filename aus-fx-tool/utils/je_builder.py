@@ -183,11 +183,12 @@ def build_je(
 
     # -----------------------------------------------------------------------
     # 2b. IS section – income / expense accounts
+    # Tagged IS_IE so the net income plug (step 3) can isolate these lines.
     # -----------------------------------------------------------------------
     for _, r in translated_is.iterrows():
         d, c = _is_debit_credit(r["qb_type"], r["usd_amount"])
         lines.append(_line(
-            section="IS",
+            section="IS_IE",
             period_date=period_date,
             je_number=je_number,
             memo=IS_MEMO,
@@ -203,15 +204,24 @@ def build_je(
         ))
 
     # -----------------------------------------------------------------------
-    # 3. Net income plug – offset the IS section into Equity in Subsidiary
+    # 3. Net income plug – offset the IS income/expense activity into Equity
+    #
+    # IMPORTANT: calculate from income/expense lines only (step 2b), NOT from
+    # the equity BS movements in step 2a.  The equity BS movements naturally
+    # offset the non-equity BS section; including them here double-counts and
+    # inverts the plug.
+    #
+    # net_income = IS credits (revenue) − IS debits (expenses)
+    #   positive  → net income  → DEBIT  Equity in Subsidiary
+    #   negative  → net loss    → CREDIT Equity in Subsidiary
     # -----------------------------------------------------------------------
-    is_debits  = sum(l["debit"]  or 0 for l in lines if l["section"] == "IS")
-    is_credits = sum(l["credit"] or 0 for l in lines if l["section"] == "IS")
-    net_income = is_credits - is_debits   # positive = net income
+    ie_debits  = sum(l["debit"]  or 0 for l in lines if l["section"] == "IS_IE")
+    ie_credits = sum(l["credit"] or 0 for l in lines if l["section"] == "IS_IE")
+    net_income = ie_credits - ie_debits
 
     if abs(net_income) >= 0.005:
-        ni_d = None if net_income > 0 else abs(net_income)
-        ni_c = abs(net_income) if net_income > 0 else None
+        ni_d = abs(net_income) if net_income > 0 else None   # income  → debit equity
+        ni_c = None if net_income > 0 else abs(net_income)   # loss    → credit equity
         lines.append(_line(
             section="IS",
             period_date=period_date,
@@ -226,6 +236,11 @@ def build_je(
             rate=None,
             usd_amount=net_income,
         ))
+
+    # Relabel IS_IE → IS now that the plug has been calculated
+    for l in lines:
+        if l["section"] == "IS_IE":
+            l["section"] = "IS"
 
     # -----------------------------------------------------------------------
     # 4. Exchange adjustment – balancing plug
